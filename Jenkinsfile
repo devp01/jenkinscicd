@@ -1,8 +1,7 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:18'
-        }
+    agent any
+    tools {
+        nodejs 'node18'   // Configure in Jenkins global tools
     }
     environment {
         APP_NAME = 'ci-cd-lab'
