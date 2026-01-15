@@ -46,7 +46,8 @@ pipeline {
             steps {
                 sh '''
                   echo "Deploying to server..."
-                  rm -rf $DEPLOY_DIR/*
+                  mkdir -p $DEPLOY_DIR
+		  rm -rf $DEPLOY_DIR/*
                   cp -r dist/* $DEPLOY_DIR/
                 '''
             }
